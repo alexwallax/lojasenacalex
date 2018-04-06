@@ -1,9 +1,9 @@
 <?php
-require_once "./classes/dao/Conexao.php";
-require_once "./classes/modelo/Categoria.php";
-require_once "./classes/dao/CategoriaDAO.php";
-require_once "./classes/modelo/Produto.php";
-require_once "./classes/dao/ProdutoDAO.php";
+require_once "../classes/dao/Conexao.php";
+require_once "../classes/modelo/Categoria.php";
+require_once "../classes/dao/CategoriaDAO.php";
+require_once "../classes/modelo/Produto.php";
+require_once "../classes/dao/ProdutoDAO.php";
 
 $produto = new Produto();
 $produtoDao = new ProdutoDAO();
@@ -24,7 +24,7 @@ if (isset($_POST['salvar'])) {
         $produtoDao->editar($produto);
     }
     
-    $produto = new Produto();
+    header("location:produtos.php");
 }
 
 if (isset($_POST['editar'])) {
@@ -32,9 +32,10 @@ if (isset($_POST['editar'])) {
 }
 
 if (isset($_POST['remover'])) {
-    $p = new Produto();
-    $p->setId($_POST['id_produto']);
-    $produtoDao->remover($p);
+//    $p = new Produto();
+//    $p->setId($_POST['id_produto']);
+    $produtoDao->remover($produtoDao->buscarPorId($_POST['id_produto']));
+    header("location:produtos.php");
 }
 
 ?>
@@ -43,7 +44,7 @@ if (isset($_POST['remover'])) {
     <head>
         <meta charset="UTF-8">
         <title>Produtos</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
     </head>
     <body>
         <div class="container">

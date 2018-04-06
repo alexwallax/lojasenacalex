@@ -1,14 +1,14 @@
 <?php
-require_once "./classes/dao/Conexao.php";
-require_once "./classes/modelo/Categoria.php";
-require_once "./classes/dao/CategoriaDAO.php";
+require_once "../classes/dao/Conexao.php";
+require_once "../classes/modelo/Categoria.php";
+require_once "../classes/dao/CategoriaDAO.php";
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
     </head>
     <body>
         <div class="container">

@@ -4,7 +4,7 @@ class Conexao {
     
     private static $SERVER = "localhost";
     private static $USER = "root";
-    private static $PASSWORD = "senac";
+    private static $PASSWORD = "";
     private static $DATABASE = "loja";
     
     function conectar() {
