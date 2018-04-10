@@ -7,6 +7,7 @@ class Produto {
     private $descricao;
     private $preco;
     private $categoria;
+    private $fotoProduto;
     
     public function getId() {
         return $this->id;
@@ -46,6 +47,14 @@ class Produto {
 
     public function setCategoria(Categoria $categoria) {
         $this->categoria = $categoria;
+    }
+    
+    public function getFotoProduto() {
+        return $this->fotoProduto;
+    }
+
+    public function setFotoProduto($fotoProduto) {
+        $this->fotoProduto = $fotoProduto;
     }
     
 }
